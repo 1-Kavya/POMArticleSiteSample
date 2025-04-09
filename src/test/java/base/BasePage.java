@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class BasePage {
@@ -14,9 +15,12 @@ public class BasePage {
 	private BasePage() {
 	
 		String strBrowser= "chrome"; 
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--incognito--");
 			
 			if (strBrowser.equalsIgnoreCase("chrome")) {
-			  driver = new ChromeDriver();
+//			  driver = new ChromeDriver();
+			  driver = new ChromeDriver(options);
 			}
 			else if (strBrowser.equalsIgnoreCase("edge")) {
 				driver = new EdgeDriver();

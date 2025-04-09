@@ -16,7 +16,7 @@ public class SiteLogin {
 	@FindBy(css = "[name='password']")
 	WebElement pwsd;
 	
-	@FindBy(css = "//button['Login']")
+	@FindBy(xpath = "//button[contains(text(),'Login')]")
 	WebElement loginButn;
 	
 	public SiteLogin(WebDriver driver) {
@@ -35,4 +35,5 @@ public class SiteLogin {
 	public void LoginButn() {
 		loginButn.click();
 	}
+	
 }
