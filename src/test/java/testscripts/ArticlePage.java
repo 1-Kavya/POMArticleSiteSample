@@ -39,7 +39,9 @@ public class ArticlePage {
 		siteLogin.LoginButn();
 	}
 	
+	@Test(priority=1)
 	public void createNewArticle() {
+		createArticle.NewArticle();
 		createArticle.provideArticleDetails("Selenium Title", "Selenium Descrption", 
 				"Selenium Body", "Selenium tags");
 		createArticle.Publish();

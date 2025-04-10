@@ -7,7 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CreateArticle {
 	
-	@FindBy(css = "a[href='#/editor']")
+//	@FindBy(xpath = "//a[href='#/editor']")
+//	@FindBy(xpath = "//a[@class='nav-link' and	contains(text(), 'New Article')]")
+//	@FindBy(xpath = "//a[@class='nav-link ' and	contains(., 'New')]")
+//	@FindBy(linkText="Article" )
+	@FindBy(partialLinkText = "New")
 	WebElement newArticle;
 	
 	@FindBy(css = "[name='title']")
@@ -29,6 +33,10 @@ public class CreateArticle {
 		PageFactory.initElements(driver, this);
 	}
 
+	public void NewArticle() {
+		newArticle.click();
+	}
+	
 	public void provideArticleDetails(String strTitle, String strDesc, String strBody, String strTags) {
 		newTitle.sendKeys(strTitle);
 		ArticleDesc.sendKeys(strDesc);

@@ -5,7 +5,7 @@
     <classes>
       <class name="testscripts.ArticlePage">
         <methods>
-          <include name="validLogiTest"/>
+          <include name="createNewArticle"/>
           <include name="setup"/>
         </methods>
       </class> <!-- testscripts.ArticlePage -->
