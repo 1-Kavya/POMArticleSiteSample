@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class EditArticle {
-	@FindBy(xpath = "a[href='#/editor/selenium-title']")
+	@FindBy(xpath = "//a[@class='nav-link' and	contains(., 'Edit Article')][1]")
 	WebElement editLink;
 	
 	
@@ -21,6 +21,7 @@ public class EditArticle {
 		editLink.click();		
 	}
 	
+		
 	public void UpdateArticle() {
 		updateArticle.click();		
 	}

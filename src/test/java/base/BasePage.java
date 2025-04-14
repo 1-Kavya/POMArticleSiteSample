@@ -16,7 +16,7 @@ public class BasePage {
 	
 		String strBrowser= "chrome"; 
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--incognito--");
+		options.addArguments("--incognito");
 			
 			if (strBrowser.equalsIgnoreCase("chrome")) {
 //			  driver = new ChromeDriver();
@@ -26,7 +26,7 @@ public class BasePage {
 				driver = new EdgeDriver();
 			}
 		      driver.manage().window().maximize();
-		      driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		      driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 		      driver.manage().deleteAllCookies();      
 
 			}
@@ -42,6 +42,8 @@ public class BasePage {
 	public static void openUrl(String url) {
 			driver.get(url);
 		}
+	
+	
 	public static void teardown() {
 			if(driver != null) {
 				driver.close();

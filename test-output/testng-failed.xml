@@ -5,8 +5,10 @@
     <classes>
       <class name="testscripts.ArticlePage">
         <methods>
-          <include name="createNewArticle"/>
+          <include name="delArticle"/>
+          <include name="viewExistingArticle"/>
           <include name="setup"/>
+          <include name="editExistingArticle"/>
         </methods>
       </class> <!-- testscripts.ArticlePage -->
     </classes>

@@ -11,19 +11,19 @@ public class CreateArticle {
 //	@FindBy(xpath = "//a[@class='nav-link' and	contains(text(), 'New Article')]")
 //	@FindBy(xpath = "//a[@class='nav-link ' and	contains(., 'New')]")
 //	@FindBy(linkText="Article" )
-	@FindBy(partialLinkText = "New")
-	WebElement newArticle;
+//	@FindBy(partialLinkText = "New")
+//	WebElement newArticle;
 	
-	@FindBy(css = "[name='title']")
+	@FindBy(xpath = "//input[@name='title']")
 	WebElement newTitle;
 	
-	@FindBy(css = "[name='description']")
+	@FindBy(xpath = "//input[@name='description']")
 	WebElement ArticleDesc;
 
-	@FindBy(css = "[name='body']")
+	@FindBy(xpath = "//textarea[@name='body']")
 	WebElement articleBody;
 	
-	@FindBy(css = "[name='tags']")
+	@FindBy(xpath = "//input[@name='tags']")
 	WebElement articleTags;
 	
 	@FindBy(xpath = "//button[contains(text(), 'Publish Article')]")
@@ -33,9 +33,9 @@ public class CreateArticle {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void NewArticle() {
-		newArticle.click();
-	}
+//	public void NewArticle() {
+//		newArticle.click();
+//	}
 	
 	public void provideArticleDetails(String strTitle, String strDesc, String strBody, String strTags) {
 		newTitle.sendKeys(strTitle);
