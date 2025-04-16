@@ -24,15 +24,23 @@ public class ViewArticle {
 	}
 	
 	public void Home() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		home.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		globalFeed.click();
-		Thread.sleep(2000);
-		preview.click();
-		
+		Thread.sleep(3000);
 	}
 	
+	public boolean ViewPage() {
+		if (author.isDisplayed()) {
+			return true;
+		}
+		return false;
+	}
+
+	public void PreviewArticle() {
+		preview.click();
+	}
 	
 	
 }

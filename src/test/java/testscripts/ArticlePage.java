@@ -40,36 +40,35 @@ public class ArticlePage {
 	}
 		
 	@Test
-	public void validLogiTest() throws InterruptedException {
+	public void validLogiTest() {
 		siteLogin.LoginLink();
 		siteLogin.loginIntoSite("sample.demotest@gmail.com", "P@ssword");
 		siteLogin.LoginButn();
-		Thread.sleep(3000);
 		siteLogin.NewArticle();
 	}
 	
 	@Test(priority=1)
-	public void createNewArticle() throws InterruptedException {
+	public void createNewArticle() {
 //		createArticle.NewArticle();
-		Thread.sleep(1500);
 		createArticle.provideArticleDetails("KTitle", "Descrption", 
 				"Selenium Body", "Selenium tags");
 		createArticle.Publish();
 		
 	}
 	@Test(priority=3)
-	public void editExistingArticle() throws InterruptedException {
-		Thread.sleep(1500);
+	public void editExistingArticle() {
 		editArticle.EditLink();
 		createArticle.provideArticleDetails(" Title edit", " Descrption edit", 
 			" Body edit", " tags edit");
 		editArticle.UpdateArticle();
-		Thread.sleep(1500);
+//		Thread.sleep(1500);
 	}
 	
-//	@Test(priority=2)
+	@Test(priority=2)
 	public void viewExistingArticle() throws InterruptedException {
 		viewArticle.Home();
+		viewArticle.ViewPage();
+		viewArticle.PreviewArticle();
 	}
 	
 	@Test(priority=4)
